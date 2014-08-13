@@ -5,10 +5,17 @@
     padding: 0.2em 0;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 /* Space out content a bit */
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    height: 100%;
+    width: 100%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -90,4 +97,8 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.#map-canvas {
+    height: 100%;
 }

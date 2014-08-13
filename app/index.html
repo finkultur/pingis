@@ -49,6 +49,7 @@
         <script src="../bower_components/bootstrap/js/tab.js"></script>
         <!-- endbuild -->
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd-5D1GC0RXogiB1eeUdoZs9IyZVUeIS0"></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -78,6 +79,7 @@
                 <div id="times"></div>
             </div>
 
+
             <div class="row marketing">
                 <div class="col-lg-6">
                     <!--<h4>HTML5 Boilerplate</h4> --> 
@@ -86,15 +88,21 @@
 
         </div>
 
+        <div id="map-canvas" style="width:50%; height:50%;"></div>
+
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/getData.js"></script>
         <script src="scripts/slajders.js"></script>
+        <script src="scripts/gm.js"></script>
         <!-- endbuild -->
         <script>
             var MAX_WS = 4;
             var MAX_GUST = 9;
+            var LAT = 57.716689;
+            var LNG = 11.949107;
             getData();
+            initializeGM();
         </script>
         
 

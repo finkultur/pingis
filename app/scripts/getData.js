@@ -45,7 +45,7 @@ function okToPlay(ws, gust) {
 }
 
 function getData() {
-    var apiurl = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/57.42/lon/11.95/data.json';
+    var apiurl = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/57.72/lon/11.95/data.json';
     var derp = $.getJSON(apiurl, function(data) {
         $.each(data, function(index, elem) {
             if (index == 'referenceTime') {
