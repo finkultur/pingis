@@ -1,3 +1,4 @@
+function makeSliders() {
   $(function() {
     $("#ws-slider").slider({
       range: "max",
@@ -14,7 +15,7 @@
     });
     $( "#amount" ).val( $( "#ws-slider" ).slider( "value" ) );
   });
-
+console.log("hurpdurp");
   $(function() {
     $("#gust-slider").slider({
       range: "max",
@@ -31,4 +32,4 @@
     });
     $( "#amount2" ).val( $( "#gust-slider" ).slider( "value" ) );
   });
-
+}
