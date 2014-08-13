@@ -1,35 +1,51 @@
-function makeSliders() {
   $(function() {
     $("#ws-slider").slider({
       range: "max",
       min: 0,
       max: 20,
-      value: 5,
+      value: MAX_WS,
       slide: function( event, ui ) {
-        $( "#amount" ).val( ui.value );
+        $( "#amount_ws" ).val( ui.value );
         MAX_WS = ui.value;
-        var div = document.getElementById('times');
-        div.innerHTML = '';
-        getData();
+        refreshStuff();
       }
     });
-    $( "#amount" ).val( $( "#ws-slider" ).slider( "value" ) );
+    $( "#amount_ws" ).val( $( "#ws-slider" ).slider( "value" ) );
   });
-console.log("hurpdurp");
+
   $(function() {
     $("#gust-slider").slider({
       range: "max",
       min: 0,
       max: 20,
-      value: 10,
+      value: MAX_GUST,
       slide: function( event, ui ) {
-        $( "#amount2" ).val( ui.value );
+        $( "#amount_gust" ).val( ui.value );
         MAX_GUST = ui.value;
+        refreshStuff();
+      }
+    });
+    $( "#amount_gust" ).val( $( "#gust-slider" ).slider( "value" ) );
+  });
+
+  $(function() {
+    $("#amount_ws").on('input', function(e) {
+        console.log($(this).val());
+        MAX_WS = $(this).val();
+        refreshStuff();
+    });
+  });
+
+  $(function() {
+    $("#amount_gust").on('input', function(e) {
+        MAX_GUST = $(this).val();
+        refreshStuff();
+    });
+  });
+
+
+function refreshStuff() {
         var div = document.getElementById('times');
         div.innerHTML = '';
         getData();
-      }
-    });
-    $( "#amount2" ).val( $( "#gust-slider" ).slider( "value" ) );
-  });
 }

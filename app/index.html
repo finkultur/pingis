@@ -65,20 +65,18 @@
             </div>
 
             <div id="slajds" class="sliders">
-                <label for="amount">Maxiumum winds:</label>
-                <input size="1" type="text" id="amount" readonly style="border:0; color:#000000; font-weight:bold;">
-                <label for="amount2">Maximum gusts:</label>
-                <input size="1" type="text" id="amount2" readonly style="border:0; color:#000000; font-weight:bold;">
+                <label for="amount_ws">Maxiumum winds:</label>
+                <input size="1" type="text" id="amount_ws" style="border:0; color:#000000; font-weight:bold;">
+                <label for="amount_gust">Maximum gusts:</label>
+                <input size="1" type="text" id="amount_gust" style="border:0; color:#000000; font-weight:bold;">
                 <div id="ws-slider"></div>
                 <br>
                 <div id="gust-slider"></div>
             </div>
  
-
             <div class="jumbotron">
                 <div id="times"></div>
             </div>
-
 
             <div class="row marketing">
                 <div class="col-lg-6">
@@ -94,9 +92,9 @@
         <script src="scripts/slajders.js"></script>
         <!-- endbuild -->
         <script>
+            var MAX_WS = 4;
+            var MAX_GUST = 9;
             getData();
-            console.log("hurd");
-            makeSliders();
         </script>
         
 
