@@ -15,9 +15,9 @@ function createTime(time) {
     var then = new Date(time);
     var str = '';
     if (then.getDate() == now.getDate()) {
-        str += 'Today ';
+        str += 'Idag ';
     } else if (then.getDate() == now.getDate()+1) {
-        str += 'Tomorrow ';
+        str += 'Imorgon ';
     }
     str += then.getHours() + ':' + '00';
     return str;
