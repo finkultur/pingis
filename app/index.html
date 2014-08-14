@@ -60,7 +60,8 @@
         <div class="container">
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#header" class="scroll">Home</a></li>
+                    <li class="active"><a href="#map-canvas" class="scroll">Where</a></li>
                 </ul>
                 <h3 class="text-muted">Pingis idag?</h3>
             </div>
@@ -79,22 +80,23 @@
                 <div id="times"></div>
             </div>
 
+            <div id="map-canvas" class="map-canvas"></div>
 
             <div class="row marketing">
                 <div class="col-lg-6">
-                    <!--<h4>HTML5 Boilerplate</h4> --> 
+                    <!--<h4>LETS PLAY PINGPONG</h4> -->
                 </div>
             </div>
 
         </div>
 
-        <div id="map-canvas" style="width:50%; height:50%;"></div>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/getData.js"></script>
         <script src="scripts/slajders.js"></script>
         <script src="scripts/gm.js"></script>
+        <script src="scripts/scroll.js"></script>
         <!-- endbuild -->
         <script>
             var MAX_WS = 4;
