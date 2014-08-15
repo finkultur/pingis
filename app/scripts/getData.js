@@ -35,6 +35,9 @@ function addTime(obj) {
 */
     if (okToPlay(obj.ws, obj.gust)) {
         var div = document.getElementById('times');
+        if (div.innerHTML == '<p>Hittade inga tider :(</p>') {
+            div.innerHTML = '';
+        }
         div.innerHTML += '<p>' + createTime(obj.validTime) + ': ' +
                      obj.ws + ' (' + obj.gust + ')' + '</p>'; 
     }
@@ -45,10 +48,11 @@ function okToPlay(ws, gust) {
 }
 
 function getData() {
-    var apiurl = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/57.72/lon/11.95/data.json';
+    var apiurl = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/' + LAT + '/lon/' + LNG + '/data.json';
     var derp = $.getJSON(apiurl, function(data) {
         $.each(data, function(index, elem) {
             if (index == 'referenceTime') {
+                //
             } else if (index == 'timeseries') {
                 for (var i in elem) {
                     var ws = elem[i].ws;
@@ -61,4 +65,17 @@ function getData() {
             }
         });
     });
+}
+
+function refreshStuff() {
+        var div = document.getElementById('times');
+        div.innerHTML = '<p>Hittade inga tider :(</p>'; 
+        getData();
+}
+
+function setLatLng(lat, lng) {
+    LAT = lat.toFixed(6);
+    LNG = lng.toFixed(6);
+    console.log('Lat: ' + LAT);  
+    console.log('Lng: ' + LNG);  
 }

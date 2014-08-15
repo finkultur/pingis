@@ -44,8 +44,3 @@
   });
 
 
-function refreshStuff() {
-        var div = document.getElementById('times');
-        div.innerHTML = '';
-        getData();
-}
