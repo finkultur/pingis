@@ -4,9 +4,10 @@ var MAX_GUST = 10
 function isTimeToday(smhidate) {
     var now = new Date(); 
     var then = new Date(smhidate);
-    var ONE_DAY = 24*60*60*1000;
+    var ONE_HOUR = 60*60*60;
+    var ONE_DAY = 24*ONE_HOUR;
 
-    return (then.getTime() > now.getTime()) && 
+    return (then.getTime() > now.getTime())-ONE_HOUR && 
            (then.getTime() < now.getTime()+ONE_DAY);
 }
 
